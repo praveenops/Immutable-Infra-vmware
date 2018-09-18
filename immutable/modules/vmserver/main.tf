@@ -47,7 +47,7 @@ resource "vsphere_virtual_machine" "vm" {
     customize {
       linux_options {
         host_name = "apache"
-        domain    = "praveenmali.com"
+        domain    = "praveenops.com"
       }
 
       network_interface {
@@ -62,7 +62,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   provisioner "file" {
-    source      = "/home/praveenm/my-docs/POC/immutable/modules/vmserver/Apache.sh"
+    source      = "Apache.sh"
     destination = "/home/ubuntu/Apache.sh"
   }
 

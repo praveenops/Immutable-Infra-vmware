@@ -55,7 +55,7 @@ resource "vsphere_virtual_machine" "vm" {
     customize {
       linux_options {
         host_name = "poc"
-        domain    = "praveenmali.com"
+        domain    = "praveenops.com"
       }
 
       network_interface {
@@ -70,12 +70,12 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   provisioner "file" {
-    source      = "/home/praveenm/my-docs/POC/wordpress-runtime/modules/DBInstance/disk-provision.sh"
+    source      = "disk-provision.sh"
     destination = "/home/ubuntu/disk-provision.sh"
   }
 
   provisioner "file" {
-    source      = "/home/praveenm/my-docs/POC/wordpress-runtime/modules/DBInstance/wordpress.sh"
+    source      = "wordpress.sh"
     destination = "/home/ubuntu/wordpress.sh"
   }
 
@@ -126,7 +126,7 @@ resource "vsphere_virtual_machine" "DB01" {
     customize {
       linux_options {
         host_name = "poc-db"
-        domain    = "praveenmali.com"
+        domain    = "praveenops.com"
       }
 
       network_interface {

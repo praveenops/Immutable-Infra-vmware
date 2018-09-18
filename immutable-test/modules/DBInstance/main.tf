@@ -54,7 +54,7 @@ resource "vsphere_virtual_machine" "vm" {
     customize {
       linux_options {
         host_name = "poc"
-        domain    = "praveenmali.com"
+        domain    = "praveenops.com"
       }
 
       network_interface {
@@ -69,7 +69,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   provisioner "file" {
-    source      = "/home/praveenm/my-docs/POC/immutable-test/modules/DBInstance/mount.sh"
+    source      = "mount.sh"
     destination = "/home/ubuntu/mount.sh"
   }
 
